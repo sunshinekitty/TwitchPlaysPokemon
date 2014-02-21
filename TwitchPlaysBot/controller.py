@@ -204,7 +204,7 @@ while True:
         lines = f.readlines()
         f.close()
         for line in lines:
-            if(line == ""):
+            if(line == "" or line == "\n"):
                 gay = True
             else:
                 value_c = (line).split(' ')[1]
