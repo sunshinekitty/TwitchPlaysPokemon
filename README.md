@@ -1,4 +1,4 @@
-<h1>Twitch Plays Pokemon IRC Bot</h1>
+<h1>Twitch Plays Pokemon IRC Bot</h1><i>v0.2</i>
 <h2>Written in Python 3.3.4</h2>
 <p>This will be updated, but not much.  I will create a quick and easy way for people to connect Twitch to Visual Boy Advance and have an interactive chat, however beyond that not much is to be promised.  I will continue the development of my own personal project where I work from this script as a base to build what fits my needs.</p>
 
