@@ -192,10 +192,12 @@ def addtofile():
     if len(commands) >= command_length:
         del commands[0]
         commands.extend([user[1:] + out.lower()])
-        list_commands.extend([out.lower()])
+        if mode.lower() == "democracy":
+            list_commands.extend([out.lower()])
     else:
         commands.extend([user[1:] + out.lower()])
-        list_commands.extend([out.lower()])
+        if mode.lower() == "democracy":
+            list_commands.extend([out.lower()])
 
 def democracy():
     global list_commands
