@@ -408,7 +408,8 @@ if mode.lower() == "anarchy":
             for index, i in enumerate(line):
                 if x == 0:
                     user = line[index]
-                    user = user.split('!')[0] + ": "
+                    user = user.split('!')[0]
+                    user = user[0:12] + ": "
                 if x == 3:
                     out += line[index]
                     out = out[1:]
@@ -514,7 +515,8 @@ if mode.lower() == "democracy":
             for index, i in enumerate(line):
                 if x == 0:
                     user = line[index]
-                    user = user.split('!')[0] + ": "
+                    user = user.split('!')[0]
+                    user = user[0:12] + ": "
                 if x == 3:
                     out += line[index]
                     out = out[1:]
