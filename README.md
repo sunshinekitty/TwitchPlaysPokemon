@@ -27,6 +27,10 @@ Open Visual Boy Advance and change your arrow key settings to use num-pad 8, 4, 
 
 Drop your .gbc file (ONLY ONE .GBC FILE) into the folder named "game"
 
+Open CMD prompt and type in chcp 65001
+
+Navigate to the Python script Launch.py and type in the name of it, it should open in python
+
 <h2>In other news</h2>
 Now I will shamelessly plug my channel <a href="http://www.twitch.tv/nutz1"><b>HERE</b></a>
 
