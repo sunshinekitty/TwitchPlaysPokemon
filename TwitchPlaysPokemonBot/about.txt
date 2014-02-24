@@ -1,0 +1,7 @@
+Currently Playing: 
+Pokemon Silver
+
+This Bot is OPEN SOURCE
+Democracy AND Anarchy OUT NOW
+http://bit.ly/TwitchPlaysPokemon
+Written in Python 3.3.4
