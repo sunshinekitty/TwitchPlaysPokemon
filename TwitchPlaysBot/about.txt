@@ -1,9 +1,0 @@
-Currently Playing: 
-Pokemon Silver
-
-This chat grabs the most said 
-command every 2 seconds to 
-reduce on trolling
-
-Total time to recreate: 5 hours
-Written in Python 3.3.4
