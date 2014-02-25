@@ -19,7 +19,7 @@ After that install this:
 
 You'll want to download <a href="http://coolrom.com/emulators/gba/14/Visual_Boy_Advance.php">Visual Boy Advance</a> and set .gbc files to open with it by default before running this bot
 
-Now you're good, download <a href="https://github.com/sunshinekitty5/TwitchPlaysPokemon/archive/master/twitchplayspokemon.zip">this</a> and extract it anywhere, don't re-arrange or re-name the contents without changing the scripts, you will also need to update ircbot.py to connect to your account, or else it will NOT work.
+Now you're good, download <a href="https://github.com/sunshinekitty5/TwitchPlaysPokemon/archive/master/twitchplayspokemon.zip">this</a> and extract it anywhere.
 
 <h2>How-to run</h2>
 
