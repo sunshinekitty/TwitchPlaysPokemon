@@ -32,6 +32,8 @@ Keybindings for Visual Boy Advance (turn numb-lock on):
 - Double click on Launch.py
 - The bot will walk you through first-time configuration
 
+Still having trouble? Check out the [How-To Video](http://youtu.be/LvBU9SJ8sfE)
+
 ### My Channel ###
 
 - My channel will be available [**here**](http://www.twitch.tv/twitchplaysgameboyadvance "Twitch Plays Gameboy Advance")
