@@ -27,6 +27,7 @@ settings = []
 commands = []
 readbuffer = ""
 GAME = os.listdir('game')[0]
+shell = win32com.client.Dispatch("WScript.Shell")
 
 VK_CODE = {'backspace':0x08,
                     'tab':0x09,
@@ -199,6 +200,10 @@ def addtofile():
         if mode.lower() == "democracy":
             list_commands.extend([out.lower()])
 
+def startemulator():
+    if os.path.splitext(os.listdir('game')[0])[1] != ".sav":
+        os.system('"%s\game\%s"' % (os.getcwd(), GAME))
+            
 def democracy():
     global list_commands
     list_commands = []
@@ -360,14 +365,15 @@ while True:
         with open("settings.txt", "w") as f:
             for each_setting in settings:
                 f.write(each_setting + '\n')
-                
+    
+# Select game type    
 while True:
     print("Currently available: Anarchy, Democracy")
     mode = input("Game type: ")
     if mode.lower() == "anarchy":
         break
     if mode.lower() == "democracy":
-        print("Takes most said command every X second: ")
+        print("Takes most said command every X second(s): ")
         democracy_time = float(input("(must be integer) X="))
         break
 
@@ -375,15 +381,12 @@ while True:
 if mode.lower() == "anarchy":
     with open("lastsaid.txt", "w") as f:
         f.write("")
+        
     print("Starting %s" % GAME)
     time.sleep(1)
-    if os.path.splitext(os.listdir('game')[0])[1] != ".sav":
-        shell = win32com.client.Dispatch("WScript.Shell")
-        shell.Run("%s\game\%s" % (os.getcwd(), GAME))
-        shell.AppActivate("%s" % APP)
-
-    os.system("chcp 65001")
-
+    emulator_job = Thread(target = startemulator, args = ())
+    emulator_job.start()
+    
     s=socket.socket( )
     s.connect((HOST, PORT))
 
@@ -422,10 +425,15 @@ if mode.lower() == "anarchy":
                 s.send(bytes("PONG tmi.twitch.tv\r\n", "UTF-8"))
             elif user == ":tmi.twitch.tv: ":
                 pass
+            elif user == ":tmi.twitch.: ":
+                pass
             elif user == ":%s.tmi.twitch.tv: " % NICK:
                 pass
             else:
-                print(user + out)
+                try:
+                    print(user + out)
+                except UnicodeEncodeError:
+                    print(user)
                 
             # Take in output
             if out.lower() == 'up':
@@ -476,21 +484,18 @@ if mode.lower() == "anarchy":
 
 # Democracy Game Mode
 if mode.lower() == "democracy":
-   
-    if __name__ == "__main__":
-        count_job = Thread(target = democracy, args = ())
-        count_job.start()
-        #count_job.join()
+    with open("lastsaid.txt", "w") as f:
+        f.write("")
+
+    count_job = Thread(target = democracy, args = ())
+    count_job.start()
+    #count_job.join()
     
     print("Starting %s" % GAME)
     time.sleep(1)
-    if os.path.splitext(os.listdir('game')[0])[1] != ".sav":
-        shell = win32com.client.Dispatch("WScript.Shell")
-        shell.Run("%s\game\%s" % (os.getcwd(), GAME))
-        shell.AppActivate("%s" % APP)
+    emulator_job = Thread(target = startemulator, args = ())
+    emulator_job.start()
 
-    os.system("chcp 65001")
-    
     s=socket.socket( )
     s.connect((HOST, PORT))
     
@@ -529,10 +534,15 @@ if mode.lower() == "democracy":
                 s.send(bytes("PONG tmi.twitch.tv\r\n", "UTF-8"))
             elif user == ":tmi.twitch.tv: ":
                 pass
+            elif user == ":tmi.twitch.: ":
+                pass
             elif user == ":%s.tmi.twitch.tv: " % NICK:
                 pass
             else:
-                print(user + out)
+                try:
+                    print(user + out)
+                except UnicodeEncodeError:
+                    print(user)
                 
             # Take in output
             if out.lower() == 'up':
@@ -556,50 +566,3 @@ if mode.lower() == "democracy":
             with open("commands.txt", "w") as f:
                 for item in commands:
                     f.write(item + '\n')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
