@@ -28,9 +28,8 @@ Keybindings for Visual Boy Advance (turn numb-lock on):
 ### How to use ###
 
 - Put your .gbc (game file) into the game folder
-- Open cmd prompt and navigate to where you extracted the folder
-- Type in `chcp 65001` and press enter (fixes encoding issues with Twitch, run each time)
-- Type in `Launch.py` to start the script
+- Remove the text document from the game folder
+- Double click on Launch.py
 - The bot will walk you through first-time configuration
 
 ### My Channel ###
