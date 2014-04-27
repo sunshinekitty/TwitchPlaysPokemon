@@ -33,10 +33,3 @@ Keybindings for Visual Boy Advance (turn numb-lock on):
 - The bot will walk you through first-time configuration
 
 Still having trouble? Check out the [How-To Video](http://youtu.be/LvBU9SJ8sfE)
-
-### My Channel ###
-
-- My channel will be available [**here**](http://www.twitch.tv/twitchplaysgameboyadvance "Twitch Plays Gameboy Advance")
-- On my channel I have the following internet speeds on a dedicated server (*tested while streaming*):
-![Server Speeds](http://i.imgur.com/VSKyN7f.png)
-- I truly believe it will have the least amount of delay possible, you can use it as a benchmark
